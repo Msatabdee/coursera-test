@@ -1,37 +1,57 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" ng-app='ShoppingListCheckOff'>
   <head>
-    <title>Static Restaurant Site</title>
-    <meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link href="https://fonts.googleapis.com/css?family=Sansita" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <title>Shopping List Check Off</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="styles/bootstrap.min.css">
+	<script src='angular.min.js'></script>
+	<script src='app.js'></script>
+    <style>
+      .emptyMessage {
+        font-weight: bold;
+        color: red;
+        font-size: 1.2em;
+      }
+      li {
+        margin-bottom: 7px;
+        font-size: 1.2em;
+      }
+      li > button {
+        margin-left: 6px;
+      }
+      button > span {
+        color: green;
+      }
+    </style>
   </head>
 <body>
-   <div class="container">
-    <h1>Our Menu</h1>
-	<section class="col-lg-3 col-md-6 col-sm-12">
-		<p class="menuHeader mh1">Chicken</p>
-		<p class="menuText">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam ut dui mattis, mollis felis in, vehicula justo.
-		Nulla sit amet nibh eu risus gravida ultricies. Ut tincidunt venenatis turpis ut scelerisque. Donec nibh mi, euismod vitae blandit a,
-		rhoncus vitae nibh. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. 
-		</p>
-	</section>
-	<section class="col-lg-3 col-md-6 col-sm-12">
-		<p class="menuHeader mh2">Beef</p>
-		<p class="menuText">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam ut dui mattis, mollis felis in, vehicula justo.
-		Nulla sit amet nibh eu risus gravida ultricies. Ut tincidunt venenatis turpis ut scelerisque. Donec nibh mi, euismod vitae blandit a,
-		rhoncus vitae nibh. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. 
-		</p>
-	</section>
-	<section class="col-lg-3 col-md-12 col-sm-12">
-		<p class="menuHeader mh3">Sushi</p>
-		<p class="menuText">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam ut dui mattis, mollis felis in, vehicula justo.
-		Nulla sit amet nibh eu risus gravida ultricies. Ut tincidunt venenatis turpis ut scelerisque. Donec nibh mi, euismod vitae blandit a,
-		rhoncus vitae nibh. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. 
-		</p>
-	</section>
-   </div>
+  <div class="container">
+  <h1>Shopping List Check Off</h1>
+
+  <div class="row">
+
+    <!-- To Buy List -->
+    <div class="col-md-6" ng-controller="ToBuyController as itemToBuy">
+     <h2>To Buy:</h2>
+     <ul>
+       
+	   <li> Buy {{itemQuantity}} of {{itemToBuy.itemName}}</li>
+	   <!--ng-repeat="item in itemToBuy"<button class="btn btn-default" ng-click="itemToBuy.addItemToBoughtList()"><span class="glyphicon glyphicon-ok"></span> Bought</button>
+       <li>Buy 10 napkins <button class="btn btn-default" ng-model="itemAdder.itemName"><span class="glyphicon glyphicon-ok"></span> Bought</button></li>-->
+     </ul>
+     <div class="emptyMessage">Everything is bought!</div>
+    </div>
+
+    <!-- Already Bought List -->
+    <div class="col-md-6" ng-controller="AlreadyBoughtController">
+     <h2>Already Bought:</h2>
+     <ul>
+       <li>Bought 10 cookies</li>
+     </ul>
+     <div class="emptyMessage">Nothing bought yet.</div>
+    </div>
+  </div>
+</div>
 
 </body>
 </html>
