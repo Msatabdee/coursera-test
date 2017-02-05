@@ -1,0 +1,84 @@
+body{
+	font-size : 16px;
+	color : #ffffff;
+	background-color: #204B76;
+	
+}
+header{
+}
+#header-nav{
+	background-color: #f24343;
+	border-radius: 0;
+	border:0;
+	padding:0;
+	margin:0px;
+}
+
+.navbar-brand {
+  padding-top: 15px;
+}
+
+.navbar-brand h1{
+	font-family: 'Kumar One', cursive;
+	font-size: 2.3em;
+	text-transform: uppercase;
+	margin-top: 0;
+	margin-bottom: 0; vertical-align:middle;
+	/**line-height: 1.2;**/
+	height:0px;
+}
+
+.navbar-brand a:hover, .navbar-brand a:focus {
+  text-decoration: none;
+}
+
+.navbar-header button.navbar-toggle, .navbar-header .icon-bar{
+	border: 1px solid #204B76;
+}
+
+.navbar-header button.navbar-toggle{
+	clear: both;	
+	margin-top: -55px;
+}
+
+#main-content h2{
+	font-size: 5vw;
+	font-family: 'Times new roman', cursive;
+}
+/***************Large Devices***************/
+@media (min-width: 1200px) {
+
+}
+
+/***************Medium Devices***************/
+@media (min-width: 992px) and (max-width: 1199px) {
+	
+}
+/***************Small Devices****************/
+@media(min-width: 768px) and (max-width: 991px){
+	;
+}
+
+/**************X-small Devices***************/
+@media (max-width: 767.5px){
+	.navbar-brand{
+		height:62px;
+		margin-bottom:0px
+	}
+	.navbar-brand h1{		
+		vertical-align:middle;
+	}
+	
+	#collapse-nav ul{
+		border: 2px solid white;		
+		background-color:#f26f6f;
+	}
+	#collapse-nav a{
+		border: 1px solid white;
+		color: blue;
+		font-family: 'Kaushan Script', cursive;
+		font-size:1.5em;
+		text-align:center;
+		font-weight:bold;
+	}
+}
