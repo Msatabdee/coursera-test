@@ -1,43 +1,97 @@
-body{
-	line-height: 23px;
-	font-size: 13px;
-	background-color: #fff;	
-	box-sizing:border-box;
+body {
+  font-size: 16px;
+  color: #fff;
+  background-color: #61122f;
+  font-family: 'Oxygen', sans-serif;
+  box-sizing:border-box;
 }
 
-.navbar{
-	border-radius: 0;
-	width:244px;
+/** HEADER **/
+#logo-img {
+  background: url('../images/logo_large.png') no-repeat;
+  background-size: contain;
+  width: 150px;
+  height: 150px;
+  margin: 10px 15px 10px 0;
+}
+.logoImage{
 	float:left;
 }
-.sidebar-wrapper{
-	background-color: pink;
-	position:relative;
-	padding-left:250px;
-	border:1px solid black;
+#nav-list {
+  margin-top: 10px;
 }
-.container{
-	position:relative;
-	display:table-cell;
-	padding:60px 40px;
+#nav-list a {
+  color: #951C49;
+  text-align: center;
+}
+#nav-list a:hover {
+  background: #E7E7E7;
+}
+#nav-list a span {
+  font-size: 1.8em;
+}
+.navbar-header button.navbar-toggle, .navbar-header .icon-bar {
+  border: 1px solid #61122f;
+}
+.navbar-header button.navbar-toggle {
+  clear: both;
 }
 
-.row{
-	margin-right: -15px;
-	margin-left: -15px;
+
+/********** Large devices only **********/
+@media (min-width: 1200px) {
+  #header-nav{
+	float:left;
+	width:250px;
+  }
 }
 
-.navbar-header{
-	margin-bottom:15px;
-	background-color:black;
-	
+/********** Medium devices only **********/
+@media (min-width: 992px) and (max-width: 1199px) {
+  /* Header */
+  #header-nav{
+	float:left;
+	width:250px;
+  }
+  #logo-img {
+    background: url('../images/restaurant-logo_medium.png') no-repeat;
+    width: 100px;
+    height: 100px;
+    margin: 5px 5px 5px 0;
+  }
+  /* End Header */
+
+  /* Home Page */
+  .container .jumbotron {
+    background: url('../images/jumbotron_992.jpg') no-repeat;
+    height: 558px;
+  }
+  /* End Home Page */
 }
-#collapsable-nav{
-	clear:both;
-	margin:25px 0px;
-	position:relative;
+
+/********** Small devices only **********/
+@media (min-width: 768px) and (max-width: 991px) {
+  /* Home Page */
+  #header-nav{
+	float:left;
+	width:250px;
+  }
+  /* End Home Page */
+
 }
-.navbar-list{
-	padding:15px 0px;
-	border-bottom: 1px solid rgba(0,0,0,.1);
+
+/********** Extra small devices only **********/
+@media (max-width: 767px) {
+  /* Header */
+  
+  #collapsable-nav a { /* Collapsed nav menu text */
+    font-size: 1.2em;
+  }
+  #collapsable-nav a span { /* Collapsed nav menu glyph */
+    font-size: 1em;
+    margin-right: 5px;
+  }
+
+
 }
+

@@ -18,31 +18,41 @@
 		<link rel="dns-prefetch" href="//fonts.googleapis.com">
 	</head>
 	<body class="" cz-shortcut-listen="true">
-		<nav class="navbar sidebar-nav">
-			<div class="container">
-				<div class="row">
-					<div class="navbar-header">
-						<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#collapsable-nav">
-						<span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> 
-						<span class="icon-bar"></span> <span class="icon-bar"></span> 
-						</button>
-						<a class="navbar-brand section-link" href="#home"> 
-							<img alt="logogoeshere" src="" class="img-responsive center-block">
-						</a>
-					</div>
-					<div id="collapsable-nav" class="collapse navbar-collapse">
-						<ul class="sidebar-nav">
-						<li class="navbar-list"><a href="#about" class="section-link">ABOUT ME</a></li>
-						<li class="navbar-list"><a href="#skills" class="section-link">SKILLS</a></li>
-						<li class="navbar-list"><a href="#education" class="section-link">EDUCATION</a></li>
-						<li class="navbar-list"><a href="#employment" class="section-link">EMPLOYMENT</a></li>
-						</ul>
-					</div>
+		<header>
+			<nav id="header-nav" class="navbar navbar-default sidebar-nav">
+			  <div class="container">
+				<div class="navbar-header">
+				  <a href="index.html" class="logoImage visible-sm visible-md visible-lg">
+					<div id="logo-img"></div>
+				  </a>
+
+				  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#collapsable-nav" aria-expanded="false">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				  </button>
 				</div>
-			</div>
-		</nav>
-		<div class="main sidebar-wrapper">
-		hi
-		</div>
+
+				<div id="collapsable-nav" class="collapse navbar-collapse">
+				   <ul id="nav-list" class="nav sidebar-nav pull-left">
+					<li>
+					  <a href="#">
+						<span class="glyphicon glyphicon-info-sign"></span><br class="hidden-xs"> ABOUT ME</a>
+					</li>
+					<li>
+					  <a href="#">
+						<span class="glyphicon glyphicon-cog"></span><br class="hidden-xs"> SKILLS</a>
+					</li>
+					<li>
+					  <a href="#">
+						<span class="glyphicon glyphicon-certificate"></span><br class="hidden-xs"> EDUCATION</a>
+					</li>
+				  </ul><!-- #nav-list -->
+				</div><!-- .collapse .navbar-collapse -->
+			  </div><!-- .container -->
+			</nav><!-- #header-nav -->
+		  
+		</header>
 	</body>
 </html>
