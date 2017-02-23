@@ -11,25 +11,42 @@ NarrowItDownController.$inject = ['MenuSearchService'];
 function NarrowItDownController(MenuSearchService){
 	var NDC = this;
 	NDC.getMatchedMenuItems = function(){
-		console.log(NDC.searchTerm);
-		NDC.found_Items = MenuSearchService.getMatchedMenuItems(NDC.searchTerm);
 		
-	}
+		var promise = MenuSearchService.getMatchedMenuItems(NDC.searchTerm);
+
+		  promise.then(function (response) {
+			console.log(response.data.menu_items[1].name)
+			NDC.foundItems = [];
+			NDC.error="";
+			for (var i = 0; i < response.data.menu_items.length; i++) {
+			  var name = response.data.menu_items[i].name;
+			  if (name.toLowerCase().indexOf(NDC.searchTerm) !== -1) {
+				 var item = {
+					  name: response.data.menu_items.[i].name,
+					  description: response.data.menu_items[i].description
+					};
+				 NDC.foundItems.push(item);
+			  }
+			}
+			console.log(NDC.foundItems);
+		  });
+	};
+	NDC.removeItem = function (itemIndex) {
+		MenuSearchService.removeItem(itemIndex);
+	};
 }	
 
 function foundItemsDirective() {
 	var ddo = {
 		templateUrl: 'found_Items.html',
 		scope: {
-		  items: '<',
-		  found_Items: '@found_Items',
+		  found_Items: '<',
 		  onRemove: '&'
 		},
 		controller: foundItemsDirectiveController,
 		controllerAs: 'list',
 		bindToController: true
 	  };
-
   return ddo;
 }
 
@@ -53,24 +70,16 @@ function MenuSearchService($http){
 	var service=this;	
 	
 	service.getMatchedMenuItems = function(searchTerm) {
-		return $http({
+		var response = $http({
 		  method: "GET",
 		  url: ("http://davids-restaurant.herokuapp.com/menu_items.json")
-		  
-		}).then(function(result){
-			console.log(result.data.menu_items[1].name)
-			var foundItems = [];
-			for (var i = 0; i < result.data.menu_items.length; i++) {
-			  var name = result.data.menu_items[i].name;
-			  if (name.toLowerCase().indexOf(searchTerm) !== -1) {
-				 foundItems.push(name);
-			  }
-			}
-			console.log(foundItems);
-		}).catch(function (error) {
-			console.log("Something went terribly wrong.");
+		
 		});
+		return response;
 	};
 	
+	service.removeItem = function (itemIndex) {
+		foundItems.splice(itemIndex, 1);
+	};
 }
 })();
