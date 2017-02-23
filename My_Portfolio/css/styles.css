@@ -1,97 +1,64 @@
-body {
-  font-size: 16px;
-  color: #fff;
-  background-color: #61122f;
-  font-family: 'Oxygen', sans-serif;
-  box-sizing:border-box;
+body{
+	margin: 0px;
+	padding: 0px;
+}
+.wrapper{
+	height:759px;
+	background-image: url(/images/backgroundImage1.jpg);
+	background-position:center center;
+	background-size: cover; 
+	background-position: center ;
+}
+.container-fluid{
+	margin: 0 auto;
 }
 
-/** HEADER **/
-#logo-img {
-  background: url('../images/logo_large.png') no-repeat;
-  background-size: contain;
-  width: 150px;
-  height: 150px;
-  margin: 10px 15px 10px 0;
+.header{
+	margin-top:0px;
+	width:100%;
 }
-.logoImage{
+
+.logo{
+	margin-top:10px;
 	float:left;
 }
-#nav-list {
-  margin-top: 10px;
-}
-#nav-list a {
-  color: #951C49;
-  text-align: center;
-}
-#nav-list a:hover {
-  background: #E7E7E7;
-}
-#nav-list a span {
-  font-size: 1.8em;
-}
-.navbar-header button.navbar-toggle, .navbar-header .icon-bar {
-  border: 1px solid #61122f;
-}
-.navbar-header button.navbar-toggle {
-  clear: both;
-}
 
-
-/********** Large devices only **********/
-@media (min-width: 1200px) {
-  #header-nav{
-	float:left;
-	width:250px;
-  }
+nav{
+	margin-top:10px;
+	float:right;
 }
-
-/********** Medium devices only **********/
-@media (min-width: 992px) and (max-width: 1199px) {
-  /* Header */
-  #header-nav{
-	float:left;
-	width:250px;
-  }
-  #logo-img {
-    background: url('../images/restaurant-logo_medium.png') no-repeat;
-    width: 100px;
-    height: 100px;
-    margin: 5px 5px 5px 0;
-  }
-  /* End Header */
-
-  /* Home Page */
-  .container .jumbotron {
-    background: url('../images/jumbotron_992.jpg') no-repeat;
-    height: 558px;
-  }
-  /* End Home Page */
+#nav-cursor{
+	height:4px;
+	width:99px;
+	background:white;
+	bottom:0;
+	left:0;	
 }
-
-/********** Small devices only **********/
-@media (min-width: 768px) and (max-width: 991px) {
-  /* Home Page */
-  #header-nav{
-	float:left;
-	width:250px;
-  }
-  /* End Home Page */
-
+.nav-list{
+	color:#fff;
+	font-size:20px;
+	font-family: 'Sansita', sans-serif;
+	margin-left:20px;	
 }
-
-/********** Extra small devices only **********/
-@media (max-width: 767px) {
-  /* Header */
-  
-  #collapsable-nav a { /* Collapsed nav menu text */
-    font-size: 1.2em;
-  }
-  #collapsable-nav a span { /* Collapsed nav menu glyph */
-    font-size: 1em;
-    margin-right: 5px;
-  }
-
-
+#page1{
+	clear:both;
+	text-align:center;
+	color:#fff;
 }
-
+#page1 h1{
+	font-size:5vw;
+	font-family: 'Bree Serif', serif;
+	padding-top:200px;
+}
+#page1 span{
+	font-size:7vw;
+	font-family: 'Oxygen', sans-serif;
+}
+#page2{
+	background:yellow;
+	
+}
+#page3{
+	background:blue;
+	
+}

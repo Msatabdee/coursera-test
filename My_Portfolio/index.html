@@ -18,41 +18,29 @@
 		<link rel="dns-prefetch" href="//fonts.googleapis.com">
 	</head>
 	<body class="" cz-shortcut-listen="true">
-		<header>
-			<nav id="header-nav" class="navbar navbar-default sidebar-nav">
-			  <div class="container">
-				<div class="navbar-header">
-				  <a href="index.html" class="logoImage visible-sm visible-md visible-lg">
-					<div id="logo-img"></div>
-				  </a>
-
-				  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#collapsable-nav" aria-expanded="false">
-					<span class="sr-only">Toggle navigation</span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-				  </button>
+		<div class="wrapper">
+			<div class="container-fluid">
+				
+					<img class="logo" src="/images/logo_small.png"/>
+					<nav>
+						<div id="nav-cursor"></div>
+						<a id="home" class="nav-list" href="#page1">Home</a>
+						<a id="education" class="nav-list" href="#page2">Education</a>
+						<a id="experience" class="nav-list" href="#page3">Experience</a>
+					</nav>
+				
+				<div id="page1">
+					<h1>Hello, I'm</h1>
+					<span>Satabdee Mohapatra</span>				
 				</div>
-
-				<div id="collapsable-nav" class="collapse navbar-collapse">
-				   <ul id="nav-list" class="nav sidebar-nav pull-left">
-					<li>
-					  <a href="#">
-						<span class="glyphicon glyphicon-info-sign"></span><br class="hidden-xs"> ABOUT ME</a>
-					</li>
-					<li>
-					  <a href="#">
-						<span class="glyphicon glyphicon-cog"></span><br class="hidden-xs"> SKILLS</a>
-					</li>
-					<li>
-					  <a href="#">
-						<span class="glyphicon glyphicon-certificate"></span><br class="hidden-xs"> EDUCATION</a>
-					</li>
-				  </ul><!-- #nav-list -->
-				</div><!-- .collapse .navbar-collapse -->
-			  </div><!-- .container -->
-			</nav><!-- #header-nav -->
-		  
-		</header>
+				<div id="page2">HTML5
+				</div>
+				<div id="page3">Hello
+				</div>
+			</div>
+							
+		</div>
+	<script src="js/jquery-1.11.3.min.js"></script>	
+	<script src="js/script.js"></script>	
 	</body>
 </html>
