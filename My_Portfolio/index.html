@@ -20,27 +20,95 @@
 	<body class="" cz-shortcut-listen="true">
 		<div class="wrapper">
 			<div class="container-fluid">
-				
-					<img class="logo" src="/images/logo_small.png"/>
-					<nav>
-						<div id="nav-cursor"></div>
-						<a id="home" class="nav-list" href="#page1">Home</a>
-						<a id="education" class="nav-list" href="#page2">Education</a>
-						<a id="experience" class="nav-list" href="#page3">Experience</a>
+				<a  class="" href="index.html"><img class="logo" src="images/logo_small.png"/></a>
+				<div class="header navbar opaque-navbar navbar-inverse navbar-fixed-top">
+					
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#collapsable-nav" aria-expanded="false">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<nav id="collapsable-nav" class="collapse navbar-collapse">
+						<a id="home" class="nav-list zoom" href="#page1">Home</a>
+						<a id="skills" class="nav-list zoom" href="#page2">Skills</a>
+						<a id="education" class="nav-list zoom" href="#page3">Education</a>
+						<a id="experience" class="nav-list zoom" href="#page4">Experience</a>
 					</nav>
-				
-				<div id="page1">
+				</div>
+				<div id="page1" class="page home">
 					<h1>Hello, I'm</h1>
 					<span>Satabdee Mohapatra</span>				
 				</div>
-				<div id="page2">HTML5
+				<div id="page2" class="page skills">
+					<center>
+						<div id="SkillBox" class="pull-left">
+								<center><p>My Skills</p></center>
+								
+						  <div class="SkillBar">
+							<div id="Skill-HTML"> 
+							  <span class="Skill-Area ">HTML</span>
+							  <span class="PercentText ">100%</span>
+							</div>
+						  </div>
+						  
+						  <div class="SkillBar">
+							<div id="Skill-CSS">
+							  <span class="Skill-Area ">CSS/CSS3</span>
+							  <span class="PercentText ">70%</span>
+							</div>
+						  </div>
+
+						  <div class="SkillBar">
+							<div id="Skill-jQuery">
+							  <span class="Skill-Area ">jQuery</span>
+							  <span class="PercentText ">40%</span>
+							</div>
+						  </div>
+						  
+						  <div class="SkillBar">
+							<div id="Skill-JS">
+							  <span class="Skill-Area ">Javascript</span>
+							  <span class="PercentText ">65%</span>
+							</div>
+						  </div>
+						  
+						  <div class="SkillBar">
+							<div id="Skill-XML">
+							  <span class="Skill-Area ">XML </span>
+							  <span class="PercentText ">40%</span>
+							</div>
+						  </div>
+						  
+							<div class="SkillBar">
+							<div id="Skill-C">
+							  <span class="Skill-Area ">PL/SQL</span>
+							  <span class="PercentText ">50%</span>
+							</div>
+						  </div>
+						  
+							<div class="SkillBar">
+							<div id="Skill-JAVA">
+							  <span class="Skill-Area ">C++</span>
+							  <span class="PercentText ">25%</span>
+							</div>
+						  </div>
+						  
+						</div>
+					</center>
 				</div>
-				<div id="page3">Hello
+				<div id="page3" class="page education">
+				
+				</div>
+				<div id="page4" class="page experience">000
 				</div>
 			</div>
 							
 		</div>
-	<script src="js/jquery-1.11.3.min.js"></script>	
-	<script src="js/script.js"></script>	
+ 
+ <!-- jQuery (Bootstrap JS plugins depend on it) -->
+  <script src="js/jquery-2.1.4.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/script.js"></script>
 	</body>
 </html>
