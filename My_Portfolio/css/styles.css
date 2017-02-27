@@ -5,11 +5,6 @@ body{
 }
 .wrapper{
 	height:759px;
-	background-image: url(../images/backgroundImage1.jpg);
-	background-position:center center;
-	-webkit-background-size: cover;
-	-moz-background-size: cover;
-	background-size: cover; 
 	/*background: url(images/bg.jpg) no-repeat center center fixed; 
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -35,10 +30,7 @@ body{
     transition: background-color .5s ease 0s;
 }
 
-.logo{
-	margin-top:10px;
-	float:left;
-}
+
 
 nav{
 	margin-top:10px;
@@ -63,12 +55,12 @@ nav{
 	padding:5px;
 }
 .page{
-	height: 100vh;
+	height: 100vh;width:100vw;
 	position:relative;
 	margin: 0;
 	padding: 0;  
 	display:block;
-	z-index: 0;
+	/* z-index: 0; */
 }
 #page1{
 	clear:both;
@@ -76,7 +68,11 @@ nav{
 	color:#A0CAB5;
 	display:table-cell; 
 	vertical-align:middle;
-	width:100vw;
+	background-image: url(../images/backgroundImage1.jpg);
+	background-position:center center;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	background-size: cover; 
 }
 #page1 h1{
 	font-size:5vw;
@@ -90,10 +86,11 @@ nav{
 }
 #page2{
 	background:#F1EDD0;
-	
+	height:auto;
 }
 #page3{
 	background:#F38A8A;
+	height:auto;
 	
 }
 #page4{
@@ -131,7 +128,7 @@ a:visited{
     font-size: 20px;
     font-family: 'Fascinate Inline', cursive;
     height: 100%;
-    margin-top: 75px;
+    margin-top: 0px;
 	width:50vw;
 }
 #SkillBox p {
@@ -139,7 +136,7 @@ a:visited{
     height: 10%;
     margin-bottom: 30px;
     padding: 10px;
-	font-family: 'Vidaloka', serif;
+	font-family: 'Roboto', serif;
 	font-weight:bold;
 	font-size:40px;
 }
@@ -148,7 +145,7 @@ a:visited{
     height: 40px;
     position: relative;
     background: rgba(17, 17, 17, .3);
-    margin-top: 25px; 
+    margin-bottom: 25px; 
 	
 	/*-ms-transform: rotate(-20deg);  IE 9 */
      /*-webkit-transform: rotate(-20deg); Safari */
@@ -409,4 +406,208 @@ to {
     text-shadow: none;
     color: #fff;
     font-size: 18px;
+}
+
+/*Page3 EDUCATION */
+
+#page3 center p{
+	font-size:3vw;
+	font-family: 'Roboto', serif;
+	font-style: bold;
+	padding-top: 55px;
+	text-align:center;
+}
+
+#page3 center div{
+	width:1px;
+	height:90vh;
+	border-color: black black black grey;
+	border-style: solid;
+	border-top-width: 0px;
+	border-right-width: 0px;
+	border-bottom-width: 0px;
+	border-left-width: 2px
+
+}
+#page3 .timelineWrapper{
+	position:relative;
+	padding:20px;
+}
+#page3 .timelineWrapper .timeline{
+    position: relative;
+    padding: 2em ;
+    width: 100%;
+    margin: 0 auto;
+}
+#page3 .timelineWrapper .timeline:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -webkit-calc(50% - 1px);
+    left: calc(50% - 1px);
+    height: 100%;
+    width: 2px;
+    background: #00b7c7;
+}
+#page3 .timelineWrapper .timeline:after {
+    content: '';
+    display: table;
+    clear: both
+}
+
+#page3 .timelineWrapper .timeline .timelineBlock{
+	position:relative;
+}
+h3{
+	margin-top:5px;
+	margin-bottom:15px;
+	font-family: 'Roboto', serif;
+}
+h5{
+	color:cyan;
+}
+.timelineImg{
+	width:50px;
+	height:50px;
+	border-radius:50%;
+	 
+	position:absolute;
+	left: -webkit-calc(50% - 25px);
+    left: calc(50% - 25px);
+	
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+    background: #2B2B2B;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -webkit-transition: all .3s ease;
+    transition: all .3s ease;
+}
+.timelineImg .icon{
+	display: block;
+    width: 24px;
+    height: 24px;
+	border-radius: 50%;
+    position: relative;
+    left: 50%;
+    top: 50%;
+    margin-left:-12px;
+    margin-top: -12px;
+	background-position:center center;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	background-size: cover;
+    background-repeat: no-repeat;
+}
+.down-arrow {
+    display: block;
+    margin: 0 auto;
+    border-color: #00b7c7 transparent transparent;
+    border-style: solid;
+    border-width: 15px 7px 0;
+    width: 0;
+    height: 0;
+    position: relative;
+    line-height: 0;
+}
+#page3 .timelineWrapper .timeline .timelineBlock .date {
+    font-size: 1em;
+    font-weight: 500;
+    display: inline-block;
+    color: black;
+    font-family: Gotham, Helvetica, Arial, sans-serif;
+    text-transform: uppercase;
+    position: absolute;
+    width: 90%;
+    left: 55%;
+    top: 30px
+}
+#page3 .timelineWrapper .timeline .timelineBlock:nth-child(odd) .date {    
+    left: 55%;
+    text-align: left;
+    right: auto;
+	margin-top:-15px;
+	font-weight:bold;
+}
+
+#page3 .timelineWrapper .timeline .timelineBlock:nth-child(even) .date {
+    left: auto;
+    text-align: right;
+    right:55%;
+	margin-top:-15px;
+	font-weight:bold;
+}
+
+#page3 .timelineWrapper .timeline .timelineBlock:nth-child(odd) #tContent{
+	background: #1b1b1b;
+	border-radius: 3px;
+	float:left;
+	width:40%;
+	color:white;
+	padding:1.1em;
+	margin-left:50px;	
+}
+#page3 .timelineWrapper .timeline .timelineBlock:nth-child(even) #tContent{
+	background: #1b1b1b;
+	border-radius: 3px;
+	width:40%;
+	color:white;
+	padding:1.1em;
+	float:right;
+	margin-right:50px;
+}
+#page3 .timelineWrapper .timeline .timelineBlock #tContent:focus,
+#page3 .timelineWrapper .timeline .timelineBlock #tContent:hover {
+    opacity: 1;
+}
+
+#page3 .timelineWrapper .timeline .timelineBlock #tContent:focus+.timelineImg,
+#page3 .timelineWrapper .timeline .timelineBlock #tContent:hover+.timelineImg {
+    background: #00b7c7;
+}
+.block1{
+}
+
+.block1 .timelineImg .icon{
+	background-image:url(../images/2009.jpg);
+}
+.block2{
+	margin-top:200px;
+}
+
+.block2 .timelineImg .icon{
+	background-image:url(../images/ri.jpg);
+}
+.block3{
+	margin-top:400px;
+}
+
+.block3 .timelineImg .icon{
+	background-image:url(../images/2014.png);
+}
+.block4{
+	margin-top:600px;
+}
+
+.block4 .timelineImg .icon{
+	background-image:url(../images/office.jpg);
+	-webkit-filter: invert(100%);
+}
+.block5{
+	margin-top:800px;
+}
+
+.block5 .icon{
+	background-image:url(../images/office.jpg);
+	-webkit-filter: invert(100%);
+}
+
+/*Contact Section*/
+
+#page4 .contactWrapper center{
+	padding-top:55px;
+	font-size:2vw;
+	font-family: 'Roboto', serif;
 }
