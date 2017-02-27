@@ -7,55 +7,27 @@ angular.module('NarrowItDownApp',[])
 .directive('foundItems', foundItemsDirective);
 
 
-NarrowItDownController.$inject = ['MenuSearchService'];
-function NarrowItDownController(MenuSearchService){
-	var NDC = this;
-	NDC.getMatchedMenuItems = function(){
-		
-		var promise = MenuSearchService.getMatchedMenuItems(NDC.searchTerm);
-
-		  promise.then(function (response) {
-			console.log(response.data.menu_items[1].name)
-			NDC.foundItems = [];
-			NDC.error="";
-			for (var i = 0; i < response.data.menu_items.length; i++) {
-			  var name = response.data.menu_items[i].name;
-			  if (name.toLowerCase().indexOf(NDC.searchTerm) !== -1) {
-				 var item = {
-					  name: response.data.menu_items.[i].name,
-					  description: response.data.menu_items[i].description
-					};
-				 NDC.foundItems.push(item);
-			  }
-			}
-			console.log(NDC.foundItems);
-		  });
-	};
-	NDC.removeItem = function (itemIndex) {
-		MenuSearchService.removeItem(itemIndex);
-	};
-}	
-
 function foundItemsDirective() {
 	var ddo = {
 		templateUrl: 'found_Items.html',
 		scope: {
-		  found_Items: '<',
+		  found_Items: '<found_Items',
 		  onRemove: '&'
 		},
 		controller: foundItemsDirectiveController,
-		controllerAs: 'list',
+		controllerAs: 'NDC',
 		bindToController: true
-	  };
+		
+	  };console.log("in directive ctrl  "+ ddo.found_Items)
   return ddo;
 }
 
 function foundItemsDirectiveController() {
-  var list = this;
-
-  list.cookiesInList = function () {
-    for (var i = 0; i < list.items.length; i++) {
-      var name = list.items[i].name;
+  var NDC = this;
+NDC.found_Items = [];
+  NDC.cookiesInList = function () {
+    for (var i = 0; i < NDC.items.length; i++) {
+      var name = NDC.items[i].name;
       if (name.toLowerCase().indexOf("cookie") !== -1) {
         return true;
       }
@@ -64,6 +36,35 @@ function foundItemsDirectiveController() {
     return false;
   };
 }
+
+NarrowItDownController.$inject = ['MenuSearchService'];
+function NarrowItDownController(MenuSearchService){
+	var NDC = this;
+	NDC.getMatchedMenuItems = function(){
+		
+		var promise = MenuSearchService.getMatchedMenuItems(NDC.searchTerm);
+
+		  promise.then(function (response) {
+			console.log("in ctrl app  "+response.data.menu_items[1].name)
+			NDC.found_Items = [];
+			NDC.error="";
+			for (var i = 0; i < response.data.menu_items.length; i++) {
+			  var name = response.data.menu_items[i].name;
+			  if (name.toLowerCase().indexOf(NDC.searchTerm) !== -1) {
+				 var item = {
+					  name: response.data.menu_items[i].name,
+					  description: response.data.menu_items[i].description
+					};
+				 NDC.found_Items.push(item);
+			  }
+			}
+			console.log(NDC.found_Items);
+		  });
+	};
+	NDC.removeItem = function (itemIndex) {
+		MenuSearchService.removeItem(itemIndex);
+	};
+}	
 
 MenuSearchService.$inject = ['$http'];
 function MenuSearchService($http){
@@ -79,7 +80,7 @@ function MenuSearchService($http){
 	};
 	
 	service.removeItem = function (itemIndex) {
-		foundItems.splice(itemIndex, 1);
+		found_Items.splice(itemIndex, 1);
 	};
 }
 })();
