@@ -9,22 +9,22 @@
 	<script src='app.js'></script>
   </head>
 <body ng-app="NarrowItDownApp">
-   <div class="container" ng-controller='NarrowItDownController as NDC'>
+   <div class="container" ng-controller='NarrowItDownController as list'>
     <h1>Narrow Down Your Chinese Menu Choice</h1>
 
     <div class="form-group">
-      <input type="text" ng-model="NDC.searchTerm" placeholder="search term" class="form-control">
+      <input type="text" ng-model="list.searchTerm" placeholder="search term" class="form-control">
     </div>
     <div class="form-group narrow-button">
-      <button class="btn btn-primary" ng-click="NDC.getMatchedMenuItems()">Narrow It Down For Me!</button>
+      <button class="btn btn-primary" ng-click="list.getMatchedMenuItems()">Narrow It Down For Me!</button>
     </div>
 <!-- <ul class="pull-left">
-<li ng-repeat="item in NDC.found_Items">{{item.name}} = {{item.description}}</li>
+<li ng-repeat="item in list.foundItems">{{item.name}} = {{item.description}}</li>
 </ul> -->
     <!-- found-items should be implemented as a component -->
     <found-items 
-	found-items="NDC.found_items" 
-	on-remove="NDC.removeItem(index)"></found-items>
+	items="list.items" 
+	on-remove="list.removeItem(index)"></found-items>
   </div>
 
 </body>

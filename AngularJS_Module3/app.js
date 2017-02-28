@@ -9,25 +9,25 @@ angular.module('NarrowItDownApp',[])
 
 function foundItemsDirective() {
 	var ddo = {
-		templateUrl: 'found_Items.html',
+		templateUrl: 'foundItems.html',
 		scope: {
-		  found_Items: '<found_Items',
+		  items: '<',
 		  onRemove: '&'
 		},
 		controller: foundItemsDirectiveController,
-		controllerAs: 'NDC',
+		controllerAs: 'list',
 		bindToController: true
 		
-	  };console.log("in directive ctrl  "+ ddo.found_Items)
+	  };console.log("in directive ctrl  "+ ddo.items)
   return ddo;
 }
 
 function foundItemsDirectiveController() {
-  var NDC = this;
-NDC.found_Items = [];
-  NDC.cookiesInList = function () {
-    for (var i = 0; i < NDC.items.length; i++) {
-      var name = NDC.items[i].name;
+  var list = this;
+list.items = [];
+  list.cookiesInList = function () {
+    for (var i = 0; i < list.items.length; i++) {
+      var name = list.items[i].name;
       if (name.toLowerCase().indexOf("cookie") !== -1) {
         return true;
       }
@@ -39,29 +39,29 @@ NDC.found_Items = [];
 
 NarrowItDownController.$inject = ['MenuSearchService'];
 function NarrowItDownController(MenuSearchService){
-	var NDC = this;
-	NDC.getMatchedMenuItems = function(){
+	var list = this;
+	list.getMatchedMenuItems = function(){
 		
-		var promise = MenuSearchService.getMatchedMenuItems(NDC.searchTerm);
+		var promise = MenuSearchService.getMatchedMenuItems(list.searchTerm);
 
 		  promise.then(function (response) {
 			console.log("in ctrl app  "+response.data.menu_items[1].name)
-			NDC.found_Items = [];
-			NDC.error="";
+			list.items = [];
+			list.error="";
 			for (var i = 0; i < response.data.menu_items.length; i++) {
 			  var name = response.data.menu_items[i].name;
-			  if (name.toLowerCase().indexOf(NDC.searchTerm) !== -1) {
+			  if (name.toLowerCase().indexOf(list.searchTerm) !== -1) {
 				 var item = {
 					  name: response.data.menu_items[i].name,
 					  description: response.data.menu_items[i].description
 					};
-				 NDC.found_Items.push(item);
+				 list.items.push(item);
 			  }
 			}
-			console.log(NDC.found_Items);
+			console.log(list.items);
 		  });
 	};
-	NDC.removeItem = function (itemIndex) {
+	list.removeItem = function (itemIndex) {
 		MenuSearchService.removeItem(itemIndex);
 	};
 }	
@@ -80,7 +80,7 @@ function MenuSearchService($http){
 	};
 	
 	service.removeItem = function (itemIndex) {
-		found_Items.splice(itemIndex, 1);
+		items.splice(itemIndex, 1);
 	};
 }
 })();
