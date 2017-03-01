@@ -8,11 +8,7 @@
 	<script src='angular.min.js'></script>
 	<script src='app.js'></script>
   </head>
-<<<<<<< HEAD
 <body>
-=======
-<body ng-app="NarrowItDownApp">
->>>>>>> 15018091564f9fbf6394ba0792be02db2b7e8d33
    <div class="container" ng-controller='NarrowItDownController as list'>
     <h1>Narrow Down Your Chinese Menu Choice</h1>
 
@@ -23,21 +19,12 @@
       <button class="btn btn-primary" ng-click="list.getMatchedMenuItems()">Narrow It Down For Me!</button>
     </div>
 <!-- <ul class="pull-left">
-<<<<<<< HEAD
 <li ng-repeat="item in list.found_Items">{{item.name}} = {{item.description}}</li>
 </ul> -->
     <!-- found-items should be implemented as a component -->
     <found-items 
 	items="list.items"
     on-remove="list.removeItem(index)""></found-items>
-=======
-<li ng-repeat="item in list.foundItems">{{item.name}} = {{item.description}}</li>
-</ul> -->
-    <!-- found-items should be implemented as a component -->
-    <found-items 
-	items="list.items" 
-	on-remove="list.removeItem(index)"></found-items>
->>>>>>> 15018091564f9fbf6394ba0792be02db2b7e8d33
   </div>
 
 </body>

@@ -18,30 +18,12 @@ function foundItemsDirective() {
 		controllerAs: 'list',
 		bindToController: true
 		
-<<<<<<< HEAD
 	  };
-=======
-	  };console.log("in directive ctrl  "+ ddo.items)
->>>>>>> 15018091564f9fbf6394ba0792be02db2b7e8d33
   return ddo;
 }
 
 function foundItemsDirectiveController() {
   var list = this;
-<<<<<<< HEAD
-=======
-list.items = [];
-  list.cookiesInList = function () {
-    for (var i = 0; i < list.items.length; i++) {
-      var name = list.items[i].name;
-      if (name.toLowerCase().indexOf("cookie") !== -1) {
-        return true;
-      }
-    }
-
-    return false;
-  };
->>>>>>> 15018091564f9fbf6394ba0792be02db2b7e8d33
 }
 
 NarrowItDownController.$inject = ['MenuSearchService'];
