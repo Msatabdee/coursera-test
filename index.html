@@ -1,63 +1,29 @@
 <!doctype html>
-<html lang="en" ng-app="NarrowItDownApp">
-  <head>
+<html lang="en">
+<head>
     <title>Narrow Down Your Menu Choice</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="styles/bootstrap.min.css">
     <link rel="stylesheet" href="styles/styles.css">
-    <script src="angular.min.js"></script>
+    <script src="../angular.min.js"></script>
     <script src="app.js"></script>
-  </head>
-<body>
-   <div class="container" ng-controller="NarrowItDownController as menu">
-    <h1>Narrow Down Your Chinese Menu Choice</h1>
+</head>
+<body ng-app="NarrowItDownApp">
 
-    <div class="form-group">
-      <input type="text" placeholder="search term" class="form-control" ng-model="menu.searchTerm"></div>
-    <div class="form-group narrow-button">
-      <button class="btn btn-primary" ng-click="menu.found();">Narrow It Down For Me!</button>
+<div class="container" ng-controller='NarrowItDownController as search'>
+    <div class="row">
+        <h1>Narrow Down Your Chinese Menu Choice</h1>
+        <div class="col-lg-6 input-group">
+        <div class="form-group">
+            <input type="text" ng-model="search.searchItem" placeholder="search term" class="form-control">
+        </div>
+        <div class="input-group-btn form-group narrow-button">
+            <button ng-click="search.getMatched();" class="btn btn-primary">Narrow It Down For Me!</button>
+        </div>
+        </div>
+        <!-- found-items should be implemented as a component -->
+        <found-items title="{{ search.title }}" found="search.found" on-remove="search.removeItem(index)"></found-items>
     </div>
-
-    <br>
-    <br>
-    <br>
-
-      <ol> 
-          {{menu.message}}
-            <li ng-repeat="item in menu.MatchedItems">
-                <found-items></found-items>
-
-               <button class="btn btn-primary" ng-click="menu.removeItem($index);">Don't want this one!</button>
-
-            </li>
-          </ol>
-
-    <!-- items="menu.MatchedItems"{{ items.name }}
-
-    items="menu.MatchedItems"
-
-    found-items should be implemented as a component
-    found-items="..." on-remove="...." 
-    {{menu.MatchedItems}}-->
-    
-
-     <!--  <div> 
-          <ol> 
-            <span class="error">{{menu.message}}</span>
-            <li ng-repeat="item in menu.MatchedItems">
-              <found-items></found-items> 
-               <button class="btn btn-primary" ng-click="menu.removeItem($index)">Don't want this one!</button>
-            </li>
-          </ol>
-
-      </div> -->
-
-
-
-
-
-  </div>
-
+</div>
 </body>
 </html>
-
