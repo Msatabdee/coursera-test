@@ -39,6 +39,7 @@ function AlreadyBoughtController(ShoppingListCheckOffService) {
 
 function ShoppingListCheckOffService() {
   var service = this;
+  var counter = 0;
   // List of shopping items
   var items = [];
 
