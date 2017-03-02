@@ -5,27 +5,59 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="styles/bootstrap.min.css">
     <link rel="stylesheet" href="styles/styles.css">
-	<script src='angular.min.js'></script>
-	<script src='app.js'></script>
+    <script src="angular.min.js"></script>
+    <script src="app.js"></script>
   </head>
 <body>
-   <div class="container" ng-controller='NarrowItDownController as list'>
+   <div class="container" ng-controller="NarrowItDownController as menu">
     <h1>Narrow Down Your Chinese Menu Choice</h1>
 
     <div class="form-group">
-      <input type="text" ng-model="list.searchTerm" placeholder="search term" class="form-control">
-    </div>
+      <input type="text" placeholder="search term" class="form-control" ng-model="menu.searchTerm"></div>
     <div class="form-group narrow-button">
-      <button class="btn btn-primary" ng-click="list.getMatchedMenuItems()">Narrow It Down For Me!</button>
+      <button class="btn btn-primary" ng-click="menu.found();">Narrow It Down For Me!</button>
     </div>
-<!-- <ul class="pull-left">
-<li ng-repeat="item in list.found_Items">{{item.name}} = {{item.description}}</li>
-</ul> -->
-    <!-- found-items should be implemented as a component -->
-    <found-items 
-	items="list.items"
-    on-remove="list.removeItem(index)""></found-items>
+
+    <br>
+    <br>
+    <br>
+
+      <ol> 
+          {{menu.message}}
+            <li ng-repeat="item in menu.MatchedItems">
+                <found-items></found-items>
+
+               <button class="btn btn-primary" ng-click="menu.removeItem($index);">Don't want this one!</button>
+
+            </li>
+          </ol>
+
+    <!-- items="menu.MatchedItems"{{ items.name }}
+
+    items="menu.MatchedItems"
+
+    found-items should be implemented as a component
+    found-items="..." on-remove="...." 
+    {{menu.MatchedItems}}-->
+    
+
+     <!--  <div> 
+          <ol> 
+            <span class="error">{{menu.message}}</span>
+            <li ng-repeat="item in menu.MatchedItems">
+              <found-items></found-items> 
+               <button class="btn btn-primary" ng-click="menu.removeItem($index)">Don't want this one!</button>
+            </li>
+          </ol>
+
+      </div> -->
+
+
+
+
+
   </div>
 
 </body>
 </html>
+
